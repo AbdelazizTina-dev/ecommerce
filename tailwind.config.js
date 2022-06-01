@@ -8,7 +8,8 @@ module.exports = {
     extend: {
       colors: {
         "banner-gray": "#dcdcdc",
-        "text-blue": "#324d67"
+        "text-blue": "#324d67",
+        "banner-red": "#f02d34",
       },
       inset: {
         "-2": "-2px",
