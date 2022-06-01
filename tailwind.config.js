@@ -10,6 +10,7 @@ module.exports = {
         "banner-gray": "#dcdcdc",
         "text-blue": "#324d67",
         "banner-red": "#f02d34",
+        "product-gray": "#ebebeb"
       },
       inset: {
         "-2": "-2px",
