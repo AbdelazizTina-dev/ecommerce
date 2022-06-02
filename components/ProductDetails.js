@@ -5,7 +5,7 @@ import Headphones2 from "../assets/headphones_c_2.webp";
 import Headphones3 from "../assets/headphones_c_3.webp";
 import Headphones4 from "../assets/headphones_c_4.webp";
 import ReviewStars from "./UI/ReviewStars";
-
+import { motion } from "framer-motion";
 const DUMMY_PICTURES = [Headphones, Headphones2, Headphones3, Headphones4];
 
 const ProductDetails = () => {
@@ -57,12 +57,24 @@ const ProductDetails = () => {
           </div>
         </div>
         <div className="flex flex-row">
-          <button className="mr-12 border-2 border-banner-red px-16 py-2 text-banner-red text-lg font-semibold">
+          <motion.button
+            whileHover={{
+              scale: 1.1,
+              transition: { duration: 0.5 },
+            }}
+            className="mr-12 border-2 border-banner-red px-16 py-2 text-banner-red text-lg font-semibold"
+          >
             Add to Cart
-          </button>
-          <button className="bg-banner-red px-16 py-2 text-white text-lg font-semibold">
+          </motion.button>
+          <motion.button
+            whileHover={{
+              scale: 1.1,
+              transition: { duration: 0.3 },
+            }}
+            className="bg-banner-red px-16 py-2 text-white text-lg font-semibold"
+          >
             Buy Now
-          </button>
+          </motion.button>
         </div>
       </div>
     </div>
