@@ -62,7 +62,7 @@ const ProductDetails = () => {
               scale: 1.1,
               transition: { duration: 0.5 },
             }}
-            className="mr-12 border-2 border-banner-red px-16 py-2 text-banner-red text-lg font-semibold"
+            className="w-58 mr-12 border-2 border-banner-red px-16 py-2 text-banner-red text-lg font-semibold"
           >
             Add to Cart
           </motion.button>
@@ -71,7 +71,7 @@ const ProductDetails = () => {
               scale: 1.1,
               transition: { duration: 0.3 },
             }}
-            className="bg-banner-red px-16 py-2 text-white text-lg font-semibold"
+            className="w-58 bg-banner-red px-16 py-2 text-white text-lg font-semibold"
           >
             Buy Now
           </motion.button>

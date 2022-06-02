@@ -28,10 +28,8 @@ const ProductPage = () => {
       <div className="overflow-hidden">
         <motion.div
           animate={animationControls}
-          onHoverStart={({offsetX}) => {
-            console.log(offsetX)
-            animationControls.stop();
-          }}
+          /* TODO: after hover ends, the animation must start again from where it was paused */
+          onHoverStart={() => animationControls.stop()}
           onHoverEnd={() => animationControls.start(animationVariant.animate)}
           className="grid grid-cols-5 gap-4 py-4 mb-24 track"
         >
