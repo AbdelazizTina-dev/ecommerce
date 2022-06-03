@@ -6,6 +6,7 @@ import Headphones3 from "../assets/headphones_c_3.webp";
 import Headphones4 from "../assets/headphones_c_4.webp";
 import ReviewStars from "./UI/ReviewStars";
 import { motion } from "framer-motion";
+import Counter from "./UI/Counter";
 const DUMMY_PICTURES = [Headphones, Headphones2, Headphones3, Headphones4];
 
 const ProductDetails = () => {
@@ -46,15 +47,7 @@ const ProductDetails = () => {
         <p className="text-3xl text-banner-red font-bold py-6">$99</p>
         <div className="flex flex-row items-center mb-12">
           <p className="text-xl text-text-blue font-bold pr-6">Quantity:</p>
-          <div className="grid grid-cols-3 w-32 h-12 divide-x-2 divide-gray-400 border-2 border-gray-400">
-            <p className="text-banner-red text-center text-3xl font-semibold">
-              -
-            </p>
-            <p className="text-text-blue text-center text-3xl font-normal">1</p>
-            <p className="text-green-600 text-center text-3xl font-semibold">
-              +
-            </p>
-          </div>
+          <Counter />
         </div>
         <div className="flex flex-row">
           <motion.button

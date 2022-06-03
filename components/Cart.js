@@ -1,5 +1,6 @@
 import React from "react";
 import { MdArrowBackIos } from "react-icons/md";
+import CartItems from "./CartItems";
 import EmptyCart from "./EmptyCart";
 const Cart = () => {
   return (
@@ -14,7 +15,7 @@ const Cart = () => {
             {"(16 items)"}
           </p>
         </div>
-        <EmptyCart />
+        <CartItems/>
       </div>
     </div>
   );
