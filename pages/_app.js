@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Cart from "../components/Cart";
 import Navbar from "../components/Navbar";
 import "../styles/globals.css";
@@ -5,9 +6,16 @@ import "../styles/globals.css";
 function MyApp({ Component, pageProps }) {
   return (
     <div className="relative">
-      <Navbar />
-      <Cart/>
-      <Component {...pageProps} />
+      <Head>
+        <title>Gomu Shop</title>
+      </Head>
+      <header>
+        <Navbar />
+      </header>
+      <main>
+        {/* <Cart/> */}
+        <Component {...pageProps} />
+      </main>
     </div>
   );
 }

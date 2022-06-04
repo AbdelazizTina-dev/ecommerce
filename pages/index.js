@@ -1,14 +1,23 @@
 import MainBanner from "../components/MainBanner";
-import Navbar from "../components/Navbar";
 import Products from "../components/Products";
 import SaleBanner from "../components/SaleBanner";
-
-export default function Home() {
+import sanityClient from "../lib/client";
+export default function Home({ products }) {
   return (
     <div className="mx-auto w-4/6">
       <MainBanner />
-      <Products />
+      <Products products={products} />
       <SaleBanner />
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  const products = await sanityClient.fetch(`*[_type == "product"]`);
+
+  return {
+    props: {
+      products,
+    },
+  };
 }
