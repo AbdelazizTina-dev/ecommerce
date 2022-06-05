@@ -1,5 +1,4 @@
 import Product from "./Product";
-import { useNextSanityImage } from "next-sanity-image";
 
 const Products = ({ products }) => {
   return (
@@ -14,6 +13,7 @@ const Products = ({ products }) => {
         {products.map((product) => (
           <Product
             key={product._id}
+            slug={product.slug.current}
             name={product.name}
             price={product.price}
             picture={product.pictures[0]}

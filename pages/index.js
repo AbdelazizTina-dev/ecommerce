@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import MainBanner from "../components/MainBanner";
 import Products from "../components/Products";
 import SaleBanner from "../components/SaleBanner";
