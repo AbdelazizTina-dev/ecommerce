@@ -3,14 +3,10 @@ import Image from "next/image";
 import ReviewStars from "./UI/ReviewStars";
 import { motion } from "framer-motion";
 import Counter from "./UI/Counter";
-import sanityClient from "../lib/client";
-import imageUrlBuilder from "@sanity/image-url";
+import { urlFor } from "../lib/imageBuilder";
+
 
 const ProductDetails = ({ product: { pictures, name, desc_02, price } }) => {
-  const builder = imageUrlBuilder(sanityClient);
-
-  const urlFor = (source) => builder.image(source);
-
   const [mainPicture, setMainPicture] = useState(pictures[0]);
 
   useEffect(() => {
