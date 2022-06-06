@@ -4,14 +4,21 @@ import ReviewStars from "./UI/ReviewStars";
 import { motion } from "framer-motion";
 import Counter from "./UI/Counter";
 import { urlFor } from "../lib/imageBuilder";
+import { useCart } from "../context/cart-context";
 
-
-const ProductDetails = ({ product: { pictures, name, desc_02, price } }) => {
+const ProductDetails = ({
+  product: { slug, pictures, name, desc_02, price },
+}) => {
   const [mainPicture, setMainPicture] = useState(pictures[0]);
 
+  const [counter, setCounter] = useState(1);
+
+  const { increaseQuantity} = useCart();
+
   useEffect(() => {
-    setMainPicture(pictures[0])
-  },[pictures])
+    setMainPicture(pictures[0]);
+    setCounter(1)
+  }, [pictures]);
 
   return (
     <div className="flex flex-row">
@@ -49,10 +56,24 @@ const ProductDetails = ({ product: { pictures, name, desc_02, price } }) => {
         <p className="text-3xl text-banner-red font-bold py-6">${price}</p>
         <div className="flex flex-row items-center mb-12">
           <p className="text-xl text-text-blue font-bold pr-6">Quantity:</p>
-          <Counter />
+          <Counter
+            onDecrease={() =>
+              setCounter((prevCounter) =>
+                prevCounter === 1 ? prevCounter : prevCounter - 1
+              )
+            }
+            value={counter}
+            onIncrease={() => setCounter((prevCounter) => prevCounter + 1)}
+          />
         </div>
         <div className="flex flex-row">
           <motion.button
+            onClick={() =>
+              increaseQuantity(
+                { slug: slug.current, name, price, pic: pictures[0] },
+                counter
+              )
+            }
             whileHover={{
               scale: 1.1,
               transition: { duration: 0.5 },

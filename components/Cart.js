@@ -4,13 +4,13 @@ import { useCart } from "../context/cart-context";
 import CartItems from "./CartItems";
 import EmptyCart from "./EmptyCart";
 const Cart = () => {
-  const ctx = useCart();
+  const { toggleCart, cartItems } = useCart();
   return (
     <div className="w-screen fixed top-0 right-0 z-50 backdrop-brightness-50">
       <div className="w-1/3 h-screen bg-white float-right">
         <div
           role="button"
-          onClick={ctx.toggleCart}
+          onClick={toggleCart}
           className="flex flex-row items-center pt-12 pl-8 hover:cursor-pointer"
         >
           <MdArrowBackIos size={16} />
@@ -21,7 +21,7 @@ const Cart = () => {
             {"(16 items)"}
           </p>
         </div>
-        <CartItems />
+        {cartItems.length === 0 ? <EmptyCart /> : <CartItems cart={cartItems}/>}
       </div>
     </div>
   );

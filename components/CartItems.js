@@ -1,16 +1,19 @@
 import React from "react";
 import CartItem from "./CartItem";
 import { motion } from "framer-motion";
-const CartItems = () => {
+const CartItems = ({ cart }) => {
   return (
     <div className="mt-4 flex flex-col w-full h-full">
-      <div className="flex flex-col h-3/4 overflow-scroll">
-        <CartItem />
-        <CartItem />
-        <CartItem />
-        <CartItem />
-        <CartItem />
-        <CartItem />
+      <div className="flex flex-col items-center h-3/4 overflow-scroll">
+        {cart.map((item) => (
+          <CartItem
+            key={item.slug}
+            name={item.name}
+            pic={item.pic}
+            price={item.price}
+            quantity={item.quantity}
+          />
+        ))}
       </div>
 
       <div className="flex flex-row mx-16 mt-4 mb-8">
