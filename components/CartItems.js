@@ -8,6 +8,7 @@ const CartItems = ({ cart }) => {
         {cart.map((item) => (
           <CartItem
             key={item.slug}
+            slug={item.slug}
             name={item.name}
             pic={item.pic}
             price={item.price}
@@ -18,7 +19,9 @@ const CartItems = ({ cart }) => {
 
       <div className="flex flex-row mx-16 mt-4 mb-8">
         <p className="mr-auto text-2xl font-bold text-black">Subtotal:</p>
-        <p className="text-2xl font-bold text-black">$294</p>
+        <p className="text-2xl font-bold text-black">
+          ${cart.reduce((sum, item) => sum + item.price * item.quantity, 0)}
+        </p>
       </div>
 
       <motion.button

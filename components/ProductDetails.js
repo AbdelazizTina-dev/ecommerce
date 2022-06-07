@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Counter from "./UI/Counter";
 import { urlFor } from "../lib/imageBuilder";
 import { useCart } from "../context/cart-context";
+import toast from "react-hot-toast";
 
 const ProductDetails = ({
   product: { slug, pictures, name, desc_02, price },
@@ -13,11 +14,11 @@ const ProductDetails = ({
 
   const [counter, setCounter] = useState(1);
 
-  const { increaseQuantity} = useCart();
+  const { addItems, toggleCart } = useCart();
 
   useEffect(() => {
     setMainPicture(pictures[0]);
-    setCounter(1)
+    setCounter(1);
   }, [pictures]);
 
   return (
@@ -68,12 +69,13 @@ const ProductDetails = ({
         </div>
         <div className="flex flex-row">
           <motion.button
-            onClick={() =>
-              increaseQuantity(
+            onClick={() => {
+              addItems(
                 { slug: slug.current, name, price, pic: pictures[0] },
                 counter
-              )
-            }
+              );
+              toast.success(`${counter} ${name} added to the cart.`);
+            }}
             whileHover={{
               scale: 1.1,
               transition: { duration: 0.5 },
@@ -83,6 +85,14 @@ const ProductDetails = ({
             Add to Cart
           </motion.button>
           <motion.button
+            onClick={() => {
+              addItems(
+                { slug: slug.current, name, price, pic: pictures[0] },
+                counter
+              );
+              toast.success(`${counter} ${name} added to the cart.`);
+              toggleCart();
+            }}
             whileHover={{
               scale: 1.1,
               transition: { duration: 0.3 },

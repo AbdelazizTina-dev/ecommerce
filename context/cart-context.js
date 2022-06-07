@@ -2,8 +2,8 @@ import { createContext, useContext, useReducer } from "react";
 
 const CartContext = createContext();
 
-const removeFromCart = (items, unwantedSlug) => {
-  return items.filter((item) => item.slug.current !== unwantedSlug);
+const removeFromCart = (cart, unwantedSlug) => {
+  return cart.filter((item) => item.slug !== unwantedSlug);
 };
 
 const addItems = (cart, product, quantity) => {
@@ -29,14 +29,21 @@ const addItems = (cart, product, quantity) => {
   }
 };
 
-const decreaseItems = (cart, product) => {
-  const itemIndex = cart.findIndex((item) => item.slug === product.slug);
+const decreaseItems = (cart, slug) => {
+  const itemIndex = cart.findIndex((item) => item.slug === slug);
 
   if (cart[itemIndex].quantity === 1) return cart;
   else {
-    cart[itemIndex].quantity--;
-    return cart;
+    return cart.map((item) =>
+      item.slug === slug ? { ...item, quantity: item.quantity - 1 } : item
+    );
   }
+};
+
+const increaseItems = (cart, slug) => {
+  return cart.map((item) =>
+    item.slug === slug ? { ...item, quantity: item.quantity + 1 } : item
+  );
 };
 
 const reducer = (state, action) => {
@@ -60,7 +67,12 @@ const reducer = (state, action) => {
     case "DECREASE":
       return {
         ...state,
-        cartItems: decreaseItems(state.cartItems, action.payload.product),
+        cartItems: decreaseItems(state.cartItems, action.payload.slug),
+      };
+    case "INCREASE":
+      return {
+        ...state,
+        cartItems: increaseItems(state.cartItems, action.payload.slug),
       };
     default:
       throw new Error();
@@ -79,10 +91,12 @@ export const CartProvider = ({ children }) => {
         showCart: state.showCart,
         toggleCart: () => dispatch({ type: "TOGGLE_CART" }),
         cartItems: state.cartItems,
-        removeItem: (slug) => dispatch({ type: "REMOVE", slug }),
-        decreaseQuantity: (product) =>
-          dispatch({ type: "DECREASE", payload: { product } }),
-        increaseQuantity: (product, quantity) =>
+        removeItem: (slug) => dispatch({ type: "REMOVE", payload: { slug } }),
+        decreaseQuantity: (slug) =>
+          dispatch({ type: "DECREASE", payload: { slug } }),
+        increaseQuantity: (slug) =>
+          dispatch({ type: "INCREASE", payload: { slug } }),
+        addItems: (product, quantity) =>
           dispatch({ type: "ADD", payload: { product, quantity } }),
       }}
     >

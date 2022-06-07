@@ -18,10 +18,17 @@ const Cart = () => {
             Your Cart
           </p>
           <p className="text-lg text-banner-red font-semibold">
-            {"(16 items)"}
+            {`(${cartItems.reduce(
+              (sum, item) => sum + item.quantity,
+              0
+            )} items)`}
           </p>
         </div>
-        {cartItems.length === 0 ? <EmptyCart /> : <CartItems cart={cartItems}/>}
+        {cartItems.length === 0 ? (
+          <EmptyCart />
+        ) : (
+          <CartItems cart={cartItems} />
+        )}
       </div>
     </div>
   );

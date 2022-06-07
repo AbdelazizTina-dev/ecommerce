@@ -3,6 +3,7 @@ import Head from "next/head";
 import Navbar from "../Navbar";
 import Cart from "../Cart";
 import { useCart } from "../../context/cart-context";
+import { Toaster } from "react-hot-toast";
 const Layout = ({ children }) => {
   const ctx = useCart();
   return (
@@ -14,6 +15,7 @@ const Layout = ({ children }) => {
         <Navbar />
       </header>
       <main>
+        <Toaster position="top-center" reverseOrder={false} />
         {ctx.showCart && <Cart />}
         {children}
       </main>
