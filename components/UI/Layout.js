@@ -4,6 +4,7 @@ import Navbar from "../Navbar";
 import Cart from "../Cart";
 import { useCart } from "../../context/cart-context";
 import { Toaster } from "react-hot-toast";
+import Footer from "../Footer";
 const Layout = ({ children }) => {
   const ctx = useCart();
   return (
@@ -19,6 +20,9 @@ const Layout = ({ children }) => {
         {ctx.showCart && <Cart />}
         {children}
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 };

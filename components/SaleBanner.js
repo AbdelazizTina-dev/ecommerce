@@ -6,7 +6,7 @@ const SaleBanner = ({ banner: { product, sale_percentage, start, end } }) => {
   const router = useRouter();
 
   return (
-    <div className="relative flex flex-row justify-between bg-banner-red mb-24 rounded-xl">
+    <div className="relative flex flex-row justify-between bg-banner-red mb-12 rounded-xl">
       <div className="pt-20 pl-12 pb-24">
         <p className="text-white text-lg font-medium">{sale_percentage}% OFF</p>
         <p className="text-7xl font-sans font-extrabold pl-2 text-white">
