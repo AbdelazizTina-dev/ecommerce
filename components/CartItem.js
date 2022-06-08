@@ -6,7 +6,6 @@ import { urlFor } from "../lib/imageBuilder";
 import { useCart } from "../context/cart-context";
 const CartItem = ({ slug, name, price, pic, quantity }) => {
   const { decreaseQuantity, increaseQuantity, removeItem } = useCart();
-
   return (
     <div className="flex flex-row w-full pl-10 pr-4 py-6">
       <Image

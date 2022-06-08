@@ -8,14 +8,14 @@ import Footer from "../Footer";
 const Layout = ({ children }) => {
   const ctx = useCart();
   return (
-    <div className="relative">
+    <div className="flex flex-col justify-between h-screen relative">
       <Head>
         <title>Gomu Shop</title>
       </Head>
       <header>
         <Navbar />
       </header>
-      <main>
+      <main className="grid">
         <Toaster position="top-center" reverseOrder={false} />
         {ctx.showCart && <Cart />}
         {children}
