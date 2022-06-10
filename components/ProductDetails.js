@@ -22,8 +22,8 @@ const ProductDetails = ({
   }, [pictures]);
 
   return (
-    <div className="flex flex-row">
-      <div className="w-1/3">
+    <div className="flex flex-col xl:flex-row">
+      <div className="w-full mb-4 xl:w-1/3 xl:mb-0">
         <Image
           src={urlFor(mainPicture).url()}
           width={500}
@@ -31,8 +31,9 @@ const ProductDetails = ({
           className="transition-colors ease-in-out duration-300 bg-product-gray hover:bg-banner-red rounded-xl"
           alt="product"
         />
-
-        <div className="grid grid-cols-4 gap-2 w-5/6 mt-4">
+        <div
+          className={`grid grid-cols-${pictures.length} gap-2 w-7/12 xl:w-5/6 mt-4`}
+        >
           {pictures.map((picture) => (
             <Image
               className={`rounded-xl ${
@@ -49,8 +50,10 @@ const ProductDetails = ({
         </div>
       </div>
 
-      <div className="ml-8 mt-2 flex flex-col">
-        <p className="text-4xl text-text-blue font-bold">{name}</p>
+      <div className="xl:ml-8 mt-2 flex flex-col">
+        <p className="text-2xl sm:text-3xl md:text-4xl text-text-blue font-bold">
+          {name}
+        </p>
         <ReviewStars />
         <p className="text-lg text-text-blue font-bold pt-4">Details:</p>
         <p className="text-md text-text-blue font-normal">{desc_02}</p>
@@ -67,7 +70,7 @@ const ProductDetails = ({
             onIncrease={() => setCounter((prevCounter) => prevCounter + 1)}
           />
         </div>
-        <div className="flex flex-row">
+        <div className="flex flex-col xl:flex-row gap-y-4">
           <motion.button
             onClick={() => {
               addItems(
@@ -80,7 +83,7 @@ const ProductDetails = ({
               scale: 1.1,
               transition: { duration: 0.5 },
             }}
-            className="w-58 mr-12 border-2 border-banner-red px-16 py-2 text-banner-red text-lg font-semibold"
+            className="mx-auto xl:mx-0 w-2/3 xl:w-96 xl:mr-12 border-2 border-banner-red px-8 xl:px-16 py-2 text-banner-red text-md sm:text-lg font-semibold"
           >
             Add to Cart
           </motion.button>
@@ -97,7 +100,7 @@ const ProductDetails = ({
               scale: 1.1,
               transition: { duration: 0.3 },
             }}
-            className="w-58 bg-banner-red px-16 py-2 text-white text-lg font-semibold"
+            className="mx-auto w-2/3 xl:w-58 bg-banner-red px-8 xl:px-16 py-2 text-white text-lg font-semibold"
           >
             Buy Now
           </motion.button>

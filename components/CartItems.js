@@ -14,7 +14,7 @@ const CartItems = ({ cart }) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${process.env.STRIPE_SECRET_KEY}`,
+        Authorization: `Bearer ${process.env.STRIPE_SECRET_KEY}`,
       },
       body: JSON.stringify(cart),
     });
@@ -29,7 +29,7 @@ const CartItems = ({ cart }) => {
 
   return (
     <div className="mt-4 flex flex-col w-full h-full">
-      <div className="flex flex-col items-center h-3/4 overflow-scroll">
+      <div className="flex flex-col items-center h-3/4 overflow-scroll divide-y-2 sm:divide-y-0">
         {cart.map((item) => (
           <CartItem
             key={item.slug}
@@ -54,7 +54,7 @@ const CartItems = ({ cart }) => {
           scale: 1.1,
           transition: { duration: 0.3 },
         }}
-        className="mx-auto mb-4 rounded-xl bg-banner-red px-24 py-2 text-white text-xl font-normal uppercase"
+        className="mx-auto mb-4 rounded-xl bg-banner-red px-12 sm:px-24 py-4 text-white text-lg sm:text-xl font-normal uppercase"
       >
         Pay with stripe
       </motion.button>

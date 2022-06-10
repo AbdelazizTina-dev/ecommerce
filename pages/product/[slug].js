@@ -54,7 +54,7 @@ const ProductPage = ({ products, product }) => {
   }, [animationControls, animationVariant]);
 
   return (
-    <div className="mx-auto w-4/6 p-4 mt-8">
+    <div className="mx-auto w-11/12 sm:w-4/6 p-4 mt-8">
       <ProductDetails product={product} />
       <p className="text-3xl font-bold pt-24 pb-12 text-text-blue text-center">
         You may also like
@@ -65,7 +65,7 @@ const ProductPage = ({ products, product }) => {
           /* TODO: after hover ends, the animation must start again from where it was paused */
           onHoverStart={() => animationControls.stop()}
           onHoverEnd={() => animationControls.start(animationVariant.animate)}
-          className={`grid grid-cols-5 gap-4 py-4 mb-24`}
+          className={`grid grid-cols-5 w-full gap-4 py-4 mb-24`}
         >
           {products
             ?.filter((product) => product.slug.current !== slug)

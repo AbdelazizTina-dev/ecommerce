@@ -8,18 +8,19 @@ const CartItem = ({ slug, name, price, pic, quantity }) => {
   const { decreaseQuantity, increaseQuantity, removeItem } = useCart();
   return (
     <div className="flex flex-row w-full pl-10 pr-4 py-6">
-      <Image
-        className="bg-banner-gray rounded-xl"
-        width={180}
-        height={180}
-        src={urlFor(pic).url()}
-        alt=""
-      />
-
+      <div className="hidden sm:block">
+        <Image
+          className="bg-banner-gray rounded-xl"
+          width={180}
+          height={180}
+          src={urlFor(pic).url()}
+          alt=""
+        />
+      </div>
       <div className="flex flex-col w-full pb-2 px-4">
-        <div className="flex flex-row mb-auto">
-          <p className="mr-auto text-text-blue text-2xl font-bold">{name}</p>
-          <p className="text-text-blue text-2xl font-bold">${price}</p>
+        <div className="flex flex-row mb-8 sm:mb-auto">
+          <p className="mr-auto text-text-blue text-lg sm:text-xl font-bold">{name}</p>
+          <p className="text-text-blue text-lg sm:text-xl font-bold">${price}</p>
         </div>
         <div className="flex flex-row items-center">
           <Counter

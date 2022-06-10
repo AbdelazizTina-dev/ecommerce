@@ -7,7 +7,7 @@ const Cart = () => {
   const { toggleCart, cartItems } = useCart();
   return (
     <div className="w-screen fixed top-0 right-0 z-50 backdrop-brightness-50">
-      <div className="w-1/3 h-screen bg-white float-right">
+      <div className="w-full xl:w-1/3 h-screen bg-white float-right">
         <div
           role="button"
           onClick={toggleCart}

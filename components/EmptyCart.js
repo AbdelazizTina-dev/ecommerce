@@ -21,7 +21,7 @@ const EmptyCart = () => {
           scale: 1.1,
           transition: { duration: 0.3 },
         }}
-        className="mx-auto rounded-xl bg-banner-red px-24 py-2 text-white text-xl font-normal uppercase"
+        className="mx-auto mb-4 rounded-xl bg-banner-red px-12 sm:px-24 py-4 text-white text-lg sm:text-xl font-normal uppercase"
       >
         Continue Shopping
       </motion.button>
