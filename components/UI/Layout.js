@@ -11,11 +11,14 @@ const Layout = ({ children }) => {
     <div className="flex flex-col justify-between h-screen relative">
       <Head>
         <title>Gomu Shop</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
+
       <header>
         <Navbar />
       </header>
-      <main className="grid">
+
+      <main className="w-full inline-block">
         <Toaster position="top-center" reverseOrder={false} />
         {ctx.showCart && <Cart />}
         {children}

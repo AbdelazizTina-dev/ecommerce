@@ -8,7 +8,7 @@ const Product = ({ name, price, picture, slug }) => {
   const router = useRouter()
   return (
     <motion.div
-      className="hover:cursor-pointer"
+      className="hover:cursor-pointer w-7/8"
       onClick={() => router.push(`/product/${slug}`)}
       whileHover={{
         scale: 1.12,

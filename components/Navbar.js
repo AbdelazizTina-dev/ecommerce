@@ -6,7 +6,7 @@ const Navbar = () => {
   const { toggleCart, cartItems } = useCart();
   const router = useRouter();
   return (
-    <nav className="flex flex-row items-center py-4 px-8">
+    <nav className="flex flex-row items-center w-full py-4 px-8">
       <p
         className="mr-auto text-xl font-medium text-gray-500 cursor-pointer"
         onClick={() => router.push("/")}

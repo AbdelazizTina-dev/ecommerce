@@ -5,7 +5,7 @@ import SaleBanner from "../components/SaleBanner";
 import sanityClient from "../lib/client";
 export default function Home({ products, banner }) {
   return (
-    <div className="mx-auto w-4/6">
+    <div className="mx-auto w-11/12 sm:w-4/6">
       <MainBanner banner={banner} />
       <Products products={products} />
       <SaleBanner banner={banner} />
