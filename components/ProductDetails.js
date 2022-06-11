@@ -32,7 +32,7 @@ const ProductDetails = ({
           alt="product"
         />
         <div
-          className={`grid grid-cols-${pictures.length} gap-2 w-7/12 xl:w-5/6 mt-4`}
+          className={`grid grid-cols-4 gap-2 w-7/12 xl:w-5/6 mt-4`}
         >
           {pictures.map((picture) => (
             <Image

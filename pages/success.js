@@ -39,7 +39,6 @@ const SuccessPage = () => {
       </p>
       <motion.button
         onClick={() => {
-          toggleCart();
           router.push("/");
         }}
         whileHover={{
