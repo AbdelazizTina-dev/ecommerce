@@ -7,7 +7,7 @@ import { useCart } from "../context/cart-context";
 const CartItem = ({ slug, name, price, pic, quantity }) => {
   const { decreaseQuantity, increaseQuantity, removeItem } = useCart();
   return (
-    <div className="flex flex-row w-full pl-10 pr-4 py-6">
+    <div className="flex flex-row w-full sm:pl-10 sm:pr-4 py-6">
       <div className="hidden sm:block">
         <Image
           className="bg-banner-gray rounded-xl"

@@ -11,7 +11,7 @@ const SuccessPage = () => {
   }, []);
 
   return (
-    <div className="flex flex-col w-1/2 m-auto bg-banner-gray p-16 gap-4 rounded-xl">
+    <div className="flex flex-col w-full sm:w-1/2 m-auto bg-banner-gray p-16 gap-4 rounded-xl">
       <BsFillBagCheckFill
         className="mx-auto"
         size={50}
@@ -46,7 +46,7 @@ const SuccessPage = () => {
           scale: 1.1,
           transition: { duration: 0.3 },
         }}
-        className="mx-auto rounded-xl bg-banner-red px-24 py-2 text-white text-xl font-normal uppercase"
+        className="mx-auto rounded-xl bg-banner-red px-6 sm:px-12 lg:px-24 py-2 text-white text-sm sm:text-md lg:text-xl font-normal uppercase"
       >
         Continue Shopping
       </motion.button>
