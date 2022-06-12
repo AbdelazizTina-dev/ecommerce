@@ -8,11 +8,11 @@ Find it live on: [Gomu Shop](https://gomu-ecommerce.vercel.app/)
 
 ## Project Screen Shot(s)
 
-(https://i.imgur.com/jOaQMVn.png)
+![scr_01](https://i.imgur.com/jOaQMVn.png)
 
-(https://imgur.com/PvrdKR7)
+![scr_02](https://i.imgur.com/PvrdKR7.png)
 
-(https://imgur.com/IuLI9jM)
+![scr_03](https://i.imgur.com/IuLI9jM.png)
 
 ## Installation and Setup Instructions
 
