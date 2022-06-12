@@ -1,34 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Gomu Shop
 
-## Getting Started
+A fully responsive e-commerce web application built with Next.js that can be customized on the fly using Sanity Headless CMS.
 
-First, run the development server:
+## Project Status and Link
+Finished
+Find it live on: [Gomu Shop](https://gomu-ecommerce.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Project Screen Shot(s)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+(https://i.imgur.com/jOaQMVn.png)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+(https://imgur.com/PvrdKR7)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+(https://imgur.com/IuLI9jM)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Installation and Setup Instructions
 
-## Learn More
+Clone down this repository. You will need `node` and `npm` installed globally on your machine.  
 
-To learn more about Next.js, take a look at the following resources:
+Installation:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+`npm install`  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+To Start Server:
 
-## Deploy on Vercel
+`npm run dev`  
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+To Visit App:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+`localhost:3000/`
+
+## Used Technologies
+
+* Next.js 12 (React 18)
+* Tailwind CSS
+* Sanity Headless CMS
+* Stripe as a payment system.
+* React Context API for Global State Management.
+
+## Reflection
+
+  - Gomu Shop is the first e-commerce application I've built as a side personal project.
+  - The overall design is not my original idea, it's inspired from a learning project on YouTube and I tried to test my limit on how well I can follow a given design mockup and realise it.
+  - I've learned a lot of React best practices as I was building this web application and had the chance to integrate both Server Side Rendering and Static Site Generation to best suite different use cases and gained experience dealing with the powerful framework that is Next.js.
+  - The main obstacle that I faced was making sure the website is fully responsive across multiple devices and screens and I'm proud to say that Gomu Shop is the first project that I was able to realize that goal in.
+  - Gomu Shop can still be upgraded with more functionalities such as: Reviews section with the ability to login and post a review, color picker for a product, persisting the cart items...etc.
