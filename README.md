@@ -1,6 +1,6 @@
 ## Gomu Shop
 
-A fully responsive e-commerce web application built with Next.js that can be customized on the fly using Sanity Headless CMS.
+A fully responsive e-commerce web application built with Next.js that can be customized on the fly using Sanity Headless CMS and Stripe as a payment system.
 
 ## Project Status and Link
 Finished
